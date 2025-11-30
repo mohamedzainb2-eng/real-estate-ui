@@ -1,28 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import PropertyDetails from "./pages/PropertyDetails";
-import "./styles/global.css";
+import HomePage from "./pages/HomePage.jsx";
+import PropertyDetails from "./pages/PropertyDetails.jsx";
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#0F172A] text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/property/:id" element={<PropertyDetails />} />
-        </Routes>
+    <Router>
+      <div className="min-h-screen flex flex-col bg-[#F3F4F6] text-[#111827]">
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/property/:id" element={<PropertyDetails />} />
+          </Routes>
+        </main>
 
-        {/* 🌍 Footer ثابت أسفل الصفحة */}
-        <footer className="w-full bg-white/70 dark:bg-emerald-950/30 border-t border-emerald-100/20 dark:border-emerald-800/40 text-center py-5 mt-auto backdrop-blur-md">
-          <p className="text-sm text-gray-700 dark:text-emerald-200">
-            © {new Date().getFullYear()} EstateFinder — جميع الحقوق محفوظة
-          </p>
-          <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-400">
-            Created by <strong>Mohamed EL Hussainy</strong>
-          </p>
+        {/* Footer ثابت من جوه React */}
+        <footer className="w-full border-t bg-white/80 py-4 mt-8">
+          <div className="max-w-6xl mx-auto px-4 text-center text-sm text-gray-600">
+            © {new Date().getFullYear()} EstateFinder — Built by{" "}
+            <strong>Mohamed EL Hussainy</strong>
+          </div>
         </footer>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
