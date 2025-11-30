@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌿 Emerald & Cream Theme (Light/Dark Mode Ready) */
+@layer base {
+  body {
+    @apply font-[Tahoma] text-[#1E293B] bg-[#FAFAF9] dark:bg-[#0F172A] dark:text-[#F1F5F9];
+    direction: rtl;
+    scroll-behavior: smooth;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-bold text-emerald-800 dark:text-emerald-300;
+  }
+
+  a {
+    @apply text-emerald-700 hover:text-emerald-500 dark:text-emerald-300 dark:hover:text-emerald-200 transition-colors duration-200;
+  }
+
+  ::selection {
+    background-color: #10b981;
+    color: #fff;
+  }
+}
+
+/* -------------------------------
+   🌈 Components
+-------------------------------- */
+@layer components {
+  .btn-primary {
+    @apply bg-emerald-600 text-white font-semibold px-5 py-2 rounded-xl hover:bg-emerald-500 transition;
+  }
+
+  .btn-outline {
+    @apply border border-emerald-400 text-emerald-700 px-5 py-2 rounded-xl hover:bg-emerald-50 dark:border-emerald-300 dark:text-emerald-200 dark:hover:bg-emerald-800/40 transition;
+  }
+
+  .card {
+    @apply bg-white dark:bg-emerald-900/30 rounded-2xl shadow-md hover:shadow-xl border border-emerald-100 dark:border-emerald-800 transition-all duration-300;
+  }
+
+  .section {
+    @apply bg-white/80 dark:bg-emerald-900/40 border border-emerald-200/30 dark:border-emerald-800/30 rounded-2xl p-8 shadow-lg backdrop-blur-md;
+  }
+
+  .input {
+    @apply border border-emerald-300 dark:border-emerald-700 rounded-lg p-2 outline-none focus:ring-2 focus:ring-emerald-400 bg-white dark:bg-emerald-950/40 text-gray-700 dark:text-emerald-50 placeholder-gray-400 dark:placeholder-emerald-200/70 transition;
+  }
+}
+
+/* -------------------------------
+   🌠 Utilities
+-------------------------------- */
+@layer utilities {
+  .emerald-gradient {
+    background: linear-gradient(135deg, #34d399, #059669);
+  }
+
+  .soft-shadow {
+    box-shadow: 0 4px 25px rgba(6, 95, 70, 0.15);
+  }
+
+  .dark-shadow {
+    box-shadow: 0 4px 25px rgba(16, 185, 129, 0.2);
+  }
+
+  .text-glow {
+    text-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+  }
+
+  .glass {
+    @apply bg-white/10 dark:bg-emerald-950/40 backdrop-blur-md border border-emerald-100/10 dark:border-emerald-800/20 rounded-2xl;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.8s ease-in-out both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @apply min-h-screen w-full flex flex-col bg-[#FAFAF9] dark:bg-[#0F172A];
+}
+
+/* لمنع التمرير الأفقي */
+body {
+  overflow-x: hidden;
+}
+
+/* حاوية المحتوى */
+.main-container {
+  @apply flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
