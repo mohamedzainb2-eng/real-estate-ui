@@ -6,9 +6,10 @@ export default function Filters({ filters, setFilters }) {
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        {/* السعر */}
         <div>
-          <label className="font-semibold text-emerald-600 dark:text-emerald-200">السعر (حتى)</label>
+          <label className="font-semibold text-emerald-600 dark:text-emerald-200">
+            السعر (حتى)
+          </label>
           <input
             type="range"
             min="1000000"
@@ -22,13 +23,14 @@ export default function Filters({ filters, setFilters }) {
           </p>
         </div>
 
-        {/* المساحة */}
         <div>
-          <label className="font-semibold text-emerald-600 dark:text-emerald-200">المساحة (حتى)</label>
+          <label className="font-semibold text-emerald-600 dark:text-emerald-200">
+            المساحة (حتى)
+          </label>
           <input
             type="range"
             min="50"
-            max="500"
+            max="600"
             value={filters.maxArea}
             onChange={(e) => setFilters({ ...filters, maxArea: Number(e.target.value) })}
             className="w-full mt-2 accent-emerald-500"
@@ -38,9 +40,10 @@ export default function Filters({ filters, setFilters }) {
           </p>
         </div>
 
-        {/* الغرف */}
         <div>
-          <label className="font-semibold text-emerald-600 dark:text-emerald-200">عدد الغرف</label>
+          <label className="font-semibold text-emerald-600 dark:text-emerald-200">
+            عدد الغرف
+          </label>
           <select
             value={filters.rooms}
             onChange={(e) => setFilters({ ...filters, rooms: e.target.value })}
@@ -54,9 +57,10 @@ export default function Filters({ filters, setFilters }) {
           </select>
         </div>
 
-        {/* النوع */}
         <div>
-          <label className="font-semibold text-emerald-600 dark:text-emerald-200">نوع العقار</label>
+          <label className="font-semibold text-emerald-600 dark:text-emerald-200">
+            نوع العقار
+          </label>
           <select
             value={filters.type}
             onChange={(e) => setFilters({ ...filters, type: e.target.value })}

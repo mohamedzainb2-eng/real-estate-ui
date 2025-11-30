@@ -1,9 +1,8 @@
-import { illustration } from "../data/properties";
+import { illustration } from "../data/properties.js";
 
 export default function Hero() {
   return (
     <section className="mt-10 bg-white/80 dark:bg-emerald-950/30 border border-emerald-200/30 dark:border-emerald-800/40 rounded-2xl shadow-lg p-6 md:p-12 flex flex-col md:flex-row items-center gap-8 text-center md:text-right">
-      {/* Text Section */}
       <div className="flex-1">
         <h2 className="text-3xl md:text-5xl font-bold leading-tight text-emerald-700 dark:text-emerald-100">
           ابحث عن <span className="text-emerald-500 dark:text-emerald-300">منزلك المثالي</span>
@@ -12,7 +11,6 @@ export default function Hero() {
           اكتشف العقارات المميزة في أفضل المواقع بأسعار تناسبك. اجعل حلمك بالمنزل المثالي حقيقة.
         </p>
 
-        {/* Search Bar */}
         <div className="mt-6 flex items-center bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-300/40 dark:border-emerald-700/30 rounded-xl p-3 shadow-inner flex-col sm:flex-row gap-3">
           <input
             type="text"
@@ -25,7 +23,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Image Section */}
       <div className="flex-1 flex justify-center">
         <img
           src={illustration}

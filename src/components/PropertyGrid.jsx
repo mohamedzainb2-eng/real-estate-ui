@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-import PropertyCard from "./PropertyCard";
-import { motion, AnimatePresence } from "framer-motion";
+import PropertyCard from "./PropertyCard.jsx";
 
 export default function PropertyGrid({ properties }) {
   return (
@@ -21,19 +19,9 @@ export default function PropertyGrid({ properties }) {
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <AnimatePresence>
-          {properties.map((p) => (
-            <motion.div
-              key={p.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-            >
-              <PropertyCard property={p} />
-            </motion.div>
-          ))}
-        </AnimatePresence>
+        {properties.map((p) => (
+          <PropertyCard key={p.id} property={p} />
+        ))}
       </div>
     </section>
   );
